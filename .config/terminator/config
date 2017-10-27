@@ -3,6 +3,7 @@
   enabled_plugins = ,
   extra_styling = False
 [keybindings]
+  broadcast_all = ""
   go_left = ""
   go_right = ""
 [layouts]
