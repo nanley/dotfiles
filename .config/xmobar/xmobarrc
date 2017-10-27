@@ -1,0 +1,36 @@
+Config {
+     font        = "xft:Mono:size=10"
+   , bgColor     = "white"
+   , fgColor     = "black"
+   , border      = BottomB
+   , borderWidth = 1
+   , position    = TopSize C 100 20
+   , alpha       = 255
+   , borderColor = "black"
+   , template    = " %StdinReader% }{ | %multicpu% | %memory% | %battery% | %wlp1s0wi% | %date% "
+   , commands    =
+        [ Run StdinReader
+        , Run Wireless "wlp1s0" [ "--template", "Net: <essid>" ] 50
+        , Run MultiCpu       [ "--template" , "Cpu: <total>%"
+                             , "--High"     , "30"         -- units: %
+                             , "--high"     , "red"
+                             ] 50
+        , Run Date           "%a %H:%M" "date" 50
+        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+                             , "--High"     , "50"        -- units: %
+                             , "--high"     , "red"
+                             ] 50
+        , Run Battery        [ "--template" , "Bat: <acstatus>"
+                             , "--Low"      , "30"        -- units: %
+                             , "--low"      , "red"
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"  , "<left>%"
+                                       -- AC "on" status
+                                       , "-O"  , "Charging"
+                                       -- charged status
+                                       , "-i"  , "Full"
+                             ] 100
+        ]
+   }
+
