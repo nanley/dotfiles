@@ -3,8 +3,8 @@
   enabled_plugins = ,
   extra_styling = False
 [keybindings]
-  go_left =
-  go_right =
+  go_left = ""
+  go_right = ""
 [layouts]
   [[default]]
     [[[child1]]]
