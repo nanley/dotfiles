@@ -7,6 +7,12 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
 import Data.List
 
+myLayout = tiled ||| Mirror split ||| Full
+  where
+     -- Tall nmaster delta mratio
+     split   = Tall 2 (3/100) (9/10)
+     tiled   = Tall 1 (3/100) (1/2)
+
 -- Start xmonad with xmobar and customizations.
 main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook NoUrgencyHook
   $ def {
@@ -18,6 +24,7 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     -- Change the default terminal for: window resizing, clickable
     -- URLs, and urgent hints.
     , terminal           = "terminator"
+    , layoutHook         = myLayout
 
     -- Workaround a bug with shellPrompt. When opening some applications
     -- (like gnome-dictionary) and the mouse is on any window,
