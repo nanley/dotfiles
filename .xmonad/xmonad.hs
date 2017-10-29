@@ -5,6 +5,7 @@ import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
+import Data.List
 
 -- Start xmonad with xmobar and customizations.
 main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook NoUrgencyHook
@@ -27,8 +28,8 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     , ((mod1Mask,        xK_p                    ), shellPrompt bwPromptRun)
 
     -- Fancy Keys
-    , ((0,               xF86XK_AudioRaiseVolume ), spawn $ setVol "+5%")
-    , ((0,               xF86XK_AudioLowerVolume ), spawn $ setVol "-5%")
+    , ((0,               xF86XK_AudioRaiseVolume ), spawn $ setVolFeedback "+5%")
+    , ((0,               xF86XK_AudioLowerVolume ), spawn $ setVolFeedback "-5%")
     , ((0,               xF86XK_AudioMute        ), spawn $ setMute True)
     , ((0,               xF86XK_MonBrightnessUp  ), spawn "xbacklight +5%")
     , ((0,               xF86XK_MonBrightnessDown), spawn "xbacklight -5%")
@@ -56,11 +57,22 @@ bwPrompt = def {  font ="xft:Mono:size=10"
 
 -- A prompt that takes no command options
 bwPromptRun = bwPrompt {autoComplete = Just 0}
+setVolUnmute :: String -> String
+setVolUnmute x = mergeCmd [setMute False, setVol x]
+
+setVolFeedback :: String -> String
+setVolFeedback x = mergeCmd [setVolUnmute x, playVolTest]
+
+mergeCmd :: [String] -> String
+mergeCmd x = unwords $ intersperse ";" x
 
 -- Accepts a positive or negative percentage that represents the
--- increment or decrement of the current volume.
--- Note, this turns off the mute setting.
+-- increment or decrement on the current volume.
 setVol :: String -> String
-setVol x = setMute False ++ "; pactl set-sink-volume @DEFAULT_SINK@ " ++ x
+setVol x = "pactl set-sink-volume @DEFAULT_SINK@ " ++ x
+
 setMute :: Bool -> String
 setMute x = "pactl set-sink-mute @DEFAULT_SINK@ " ++ show (if x then 1 else 0)
+
+playVolTest :: String
+playVolTest = "canberra-gtk-play -i audio-volume-change"
