@@ -24,8 +24,7 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     -- the window opens above the mouse's window and not the currently focused one.
     , focusFollowsMouse  = False
   } `additionalKeys` [
-      ((mod1Mask,        xK_o                    ), shellPrompt bwPrompt)
-    , ((mod1Mask,        xK_p                    ), shellPrompt bwPromptRun)
+      ((mod1Mask,        xK_p                    ), shellPrompt bwPrompt)
 
     -- Fancy Keys
     , ((0,               xF86XK_AudioRaiseVolume ), spawn $ setVolFeedback "+5%")
@@ -55,8 +54,6 @@ bwPrompt = def {  font ="xft:Mono:size=10"
                   , height = 20
                  }
 
--- A prompt that takes no command options
-bwPromptRun = bwPrompt {autoComplete = Just 0}
 setVolUnmute :: String -> String
 setVolUnmute x = mergeCmd [setMute False, setVol x]
 
