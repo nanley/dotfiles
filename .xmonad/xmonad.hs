@@ -33,9 +33,12 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     , ((0,               xF86XK_MonBrightnessUp  ), spawn "xbacklight +5%")
     , ((0,               xF86XK_MonBrightnessDown), spawn "xbacklight -5%")
 
-    -- Lenovo Yoga 2 Pro buttons
-    , ((mod4Mask,        xK_o                    ), spawn "i3lock")
-    , ((mod4Mask,        xK_p                    ), spawn "xcalib -invert -alter")
+    , ((mod4Mask,        xK_l                    ), spawn "i3lock")
+
+    -- Appearance
+    , ((mod4Mask,        xK_i                    ), spawn "xrandr-invert-colors")
+    , ((mod4Mask,        xK_r                    ), spawn "redshift -O 3500")
+    , ((mod4Mask,        xK_b                    ), spawn "redshift -O 5500")
   ])
 
 -- A simple black and white color scheme for log info
