@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Layout.Cross
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig
@@ -7,7 +8,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
 import Data.List
 
-myLayout = tiled ||| Mirror split ||| Full
+myLayout = tiled ||| Mirror split ||| simpleCross
   where
      -- Tall nmaster delta mratio
      split   = Tall 2 (3/100) (9/10)
