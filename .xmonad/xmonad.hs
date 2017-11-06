@@ -2,6 +2,7 @@ import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
+import XMonad.Layout.Cross
 import XMonad.Util.AudioKeys
 import XMonad.Util.EZConfig
 
@@ -17,6 +18,10 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     , workspaces = map show [1..4] ++ ("-" : map show [6..9])
 
     , layoutHook = myLayout
+
+    -- This option keeps the Cross layout from cycling through all windows when
+    -- hovering over a window that's not centered.
+    , focusFollowsMouse  = False
   } `additionalKeys` [
       ((mod4Mask, xK_l                    ), spawn "i3lock")
 
@@ -39,7 +44,7 @@ bwBarPP = def {ppUrgent  = xmobarColor "white" "black" . pad}
 -- Add the shift mask to the default keybinding to avoid a conflict with our terminal
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_b)
 
-myLayout = tiled ||| Mirror split ||| Full
+myLayout = tiled ||| Mirror split ||| Cross (10/11) (3/100)
   where
      -- Tall nmaster delta mratio
      split = Tall 2 (3/100) (9/10)
