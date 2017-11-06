@@ -1,5 +1,6 @@
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
+import XMonad.Layout.Cross
 import XMonad.Util.AudioKeys
 import XMonad.Util.EZConfig
 
@@ -9,6 +10,10 @@ main = xmonad
     -- URLs, and urgent hints.
       terminal   = "terminator"
     , layoutHook = myLayout
+
+    -- This option keeps the Cross layout from cycling through all windows when
+    -- hovering over a window that's not centered.
+    , focusFollowsMouse  = False
   } `additionalKeys` [
       ((mod4Mask, xK_l                    ), spawn "i3lock")
 
@@ -25,7 +30,7 @@ main = xmonad
     , ((mod4Mask, xK_b                    ), spawn "redshift -O 5500")
   ])
 
-myLayout = tiled ||| Mirror split ||| Full
+myLayout = tiled ||| Mirror split ||| Cross (10/11) (3/100)
   where
      -- Tall nmaster delta mratio
      split = Tall 2 (3/100) (9/10)
