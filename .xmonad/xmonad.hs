@@ -1,6 +1,6 @@
-import Data.List
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
+import XMonad.Util.AudioKeys
 import XMonad.Util.EZConfig
 
 main = xmonad
@@ -30,23 +30,3 @@ myLayout = tiled ||| Mirror split ||| Full
      -- Tall nmaster delta mratio
      split = Tall 2 (3/100) (9/10)
      tiled = Tall 1 (3/100) (1/2)
-
-setVolUnmute :: String -> String
-setVolUnmute x = mergeCmd [setMute False, setVol x]
-
-setVolFeedback :: String -> String
-setVolFeedback x = mergeCmd [setVolUnmute x, playVolTest]
-
-mergeCmd :: [String] -> String
-mergeCmd x = unwords $ intersperse ";" x
-
--- Accepts a positive or negative percentage that represents the
--- increment or decrement on the current volume.
-setVol :: String -> String
-setVol x = "pactl set-sink-volume @DEFAULT_SINK@ " ++ x
-
-setMute :: Bool -> String
-setMute x = "pactl set-sink-mute @DEFAULT_SINK@ " ++ show (if x then 1 else 0)
-
-playVolTest :: String
-playVolTest = "canberra-gtk-play -i audio-volume-change"
