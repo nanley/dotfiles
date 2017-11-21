@@ -22,19 +22,19 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     -- hovering over a window that's not centered.
     , focusFollowsMouse  = False
   } `additionalKeys` [
-      ((mod4Mask, xK_l                    ), spawn "i3lock")
+      ((mod4Mask, xK_l    ), spawn "i3lock")
 
     -- Audio
-    , ((mod4Mask, xK_Up                   ), spawn $ setVolFeedback "+5%")
-    , ((mod4Mask, xK_Down                 ), spawn $ setVolFeedback "-5%")
-    , ((mod4Mask, xK_Right                ), spawn $ setMute True)
+    , ((mod4Mask, xK_Up   ), spawn $ setVolFeedback "+5%")
+    , ((mod4Mask, xK_Down ), spawn $ setVolFeedback "-5%")
+    , ((mod4Mask, xK_Right), spawn $ setMute True)
 
     -- Appearance
-    , ((mod4Mask, xK_b                    ), spawn "xbacklight +5%")       -- brighten
-    , ((mod4Mask, xK_d                    ), spawn "xbacklight -5%")       -- darken
-    , ((mod4Mask, xK_i                    ), spawn "xrandr-invert-colors") -- invert
-    , ((mod4Mask, xK_r                    ), spawn "redshift -O 3500")     -- red
-    , ((mod4Mask, xK_w                    ), spawn "redshift -O 5500")     -- white
+    , ((mod4Mask, xK_b    ), spawn "xbacklight +5%")       -- brighten
+    , ((mod4Mask, xK_d    ), spawn "xbacklight -5%")       -- darken
+    , ((mod4Mask, xK_i    ), spawn "xrandr-invert-colors") -- invert
+    , ((mod4Mask, xK_r    ), spawn "redshift -O 3500")     -- red
+    , ((mod4Mask, xK_w    ), spawn "redshift -O 5500")     -- white
   ])
 
 -- A simple black and white color scheme for log info
