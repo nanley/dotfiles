@@ -5,8 +5,16 @@ import XMonad.Layout.Cross
 import XMonad.Util.AudioKeys
 import XMonad.Util.EZConfig
 
-main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook NoUrgencyHook
-  def {
+main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey
+ (withUrgencyHook NoUrgencyHook myConfig)
+
+-- A simple black and white color scheme for log info
+bwBarPP = def {ppUrgent  = xmobarColor "white" "black" . pad}
+
+-- Add the shift mask to the default keybinding to avoid a conflict with our terminal
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_b)
+
+myConfig = def {
     -- Change the default terminal for: window resizing, clickable
     -- URLs, and urgent hints.
       terminal   = "terminator"
@@ -21,7 +29,16 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     -- This option keeps the Cross layout from cycling through all windows when
     -- hovering over a window that's not centered.
     , focusFollowsMouse  = False
-  } `additionalKeys` [
+  } `additionalKeys` myKeys
+
+myLayout = tiled ||| Mirror split ||| Cross (10/11) (3/100)
+  where
+     -- Tall nmaster delta mratio
+     split = Tall 2 (3/100) (9/10)
+     tiled = Tall 1 (3/100) (1/2)
+
+myKeys = [
+    -- Security
       ((mod4Mask, xK_l    ), spawn "i3lock")
 
     -- Audio
@@ -35,16 +52,5 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
     , ((mod4Mask, xK_i    ), spawn "xrandr-invert-colors") -- invert
     , ((mod4Mask, xK_r    ), spawn "redshift -O 3500")     -- red
     , ((mod4Mask, xK_w    ), spawn "redshift -O 5500")     -- white
-  ])
+  ]
 
--- A simple black and white color scheme for log info
-bwBarPP = def {ppUrgent  = xmobarColor "white" "black" . pad}
-
--- Add the shift mask to the default keybinding to avoid a conflict with our terminal
-toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_b)
-
-myLayout = tiled ||| Mirror split ||| Cross (10/11) (3/100)
-  where
-     -- Tall nmaster delta mratio
-     split = Tall 2 (3/100) (9/10)
-     tiled = Tall 1 (3/100) (1/2)
