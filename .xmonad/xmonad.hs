@@ -1,4 +1,3 @@
-import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
@@ -26,16 +25,16 @@ main = xmonad =<< statusBar "xmobar" bwBarPP toggleStrutsKey (withUrgencyHook No
       ((mod4Mask, xK_l                    ), spawn "i3lock")
 
     -- Audio
-    , ((0,        xF86XK_AudioRaiseVolume ), spawn $ setVolFeedback "+5%")
-    , ((0,        xF86XK_AudioLowerVolume ), spawn $ setVolFeedback "-5%")
-    , ((0,        xF86XK_AudioMute        ), spawn $ setMute True)
+    , ((mod4Mask, xK_Up                   ), spawn $ setVolFeedback "+5%")
+    , ((mod4Mask, xK_Down                 ), spawn $ setVolFeedback "-5%")
+    , ((mod4Mask, xK_Right                ), spawn $ setMute True)
 
     -- Appearance
-    , ((0,        xF86XK_MonBrightnessUp  ), spawn "xbacklight +5%")
-    , ((0,        xF86XK_MonBrightnessDown), spawn "xbacklight -5%")
-    , ((mod4Mask, xK_i                    ), spawn "xrandr-invert-colors")
-    , ((mod4Mask, xK_r                    ), spawn "redshift -O 3500")
-    , ((mod4Mask, xK_b                    ), spawn "redshift -O 5500")
+    , ((mod4Mask, xK_b                    ), spawn "xbacklight +5%")       -- brighten
+    , ((mod4Mask, xK_d                    ), spawn "xbacklight -5%")       -- darken
+    , ((mod4Mask, xK_i                    ), spawn "xrandr-invert-colors") -- invert
+    , ((mod4Mask, xK_r                    ), spawn "redshift -O 3500")     -- red
+    , ((mod4Mask, xK_w                    ), spawn "redshift -O 5500")     -- white
   ])
 
 -- A simple black and white color scheme for log info
