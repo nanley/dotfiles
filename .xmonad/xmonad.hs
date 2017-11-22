@@ -31,10 +31,9 @@ myConfig = def {
     , focusFollowsMouse  = False
   } `additionalKeys` myKeys
 
-myLayout = tiled ||| Mirror split ||| Cross (10/11) (3/100)
+myLayout = tiled ||| Mirror tiled ||| Cross (10/11) (3/100)
   where
      -- Tall nmaster delta mratio
-     split = Tall 2 (3/100) (9/10)
      tiled = Tall 1 (3/100) (1/2)
 
 myKeys = [
