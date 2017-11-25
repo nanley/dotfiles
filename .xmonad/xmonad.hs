@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Actions.NoBorders
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
 import XMonad.Util.AudioKeys
@@ -39,5 +40,6 @@ myKeys = [
     , ((mod4Mask, xK_i    ), spawn "xrandr-invert-colors") -- invert
     , ((mod4Mask, xK_r    ), spawn "redshift -O 3500")     -- red
     , ((mod4Mask, xK_w    ), spawn "redshift -O 5500")     -- white
+    , ((mod4Mask, xK_t    ), withFocused toggleBorder)     -- toggle border
   ]
 
