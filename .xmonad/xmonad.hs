@@ -19,9 +19,7 @@ myConfig = def {
     -- URLs, and urgent hints.
       terminal   = "terminator"
 
-    -- [1..4] : work items, increasing importance from right to left  (L<-R)
-    -- "-"    : long-running rarely-checked windows
-    -- [6..9] : other items, increasing importance from left to right (L->R)
+    -- Visually differentiate the middle workspace.
     , workspaces = map show [1..4] ++ ("-" : map show [6..9])
   } `additionalKeys` myKeys
 
