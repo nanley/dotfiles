@@ -1,7 +1,6 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
-import XMonad.Layout.Cross
 import XMonad.Util.AudioKeys
 import XMonad.Util.EZConfig
 
@@ -23,18 +22,7 @@ myConfig = def {
     -- "-"    : long-running rarely-checked windows
     -- [6..9] : other items, increasing importance from left to right (L->R)
     , workspaces = map show [1..4] ++ ("-" : map show [6..9])
-
-    , layoutHook = myLayout
-
-    -- This option keeps the Cross layout from cycling through all windows when
-    -- hovering over a window that's not centered.
-    , focusFollowsMouse  = False
   } `additionalKeys` myKeys
-
-myLayout = tiled ||| Mirror tiled ||| Cross (10/11) (3/100)
-  where
-     -- Tall nmaster delta mratio
-     tiled = Tall 1 (3/100) (1/2)
 
 myKeys = [
     -- Security
