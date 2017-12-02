@@ -35,9 +35,10 @@ myKeys = [
     -- Appearance
     , ((mod4Mask, xK_b    ), spawn "xbacklight +5%")       -- brighten
     , ((mod4Mask, xK_d    ), spawn "xbacklight -5%")       -- darken
-    , ((mod4Mask, xK_i    ), spawn "xrandr-invert-colors") -- invert
-    , ((mod4Mask, xK_r    ), spawn "redshift -O 3500")     -- red
-    , ((mod4Mask, xK_w    ), spawn "redshift -O 5500")     -- white
+    , ((mod4Mask, xK_p    ), spawn $ redshift "peek")      -- peek at the natural color
     , ((mod4Mask, xK_t    ), withFocused toggleBorder)     -- toggle border
   ]
 
+-- Redshift utility commands
+redshift "peek" = redshift "stop" ++ "; sleep 30 ; " ++ redshift "start"
+redshift cmd    = "systemctl --user " ++ cmd ++" redshift"
