@@ -34,10 +34,10 @@ myKeys = [
     , ((mod4Mask, xK_Left ), spawn $ setMute True)
 
     -- Appearance
-    , ((mod4Mask, xK_b    ), spawn "xbacklight +5%")       -- brighten
-    , ((mod4Mask, xK_d    ), spawn "xbacklight -5%")       -- darken
-    , ((mod4Mask, xK_p    ), spawn $ redshift "peek")      -- peek at the natural color
-    , ((mod4Mask, xK_t    ), withFocused toggleBorder)     -- toggle border
+    , ((mod4Mask, xK_Page_Up  ), spawn "xbacklight +5%")   -- brighten
+    , ((mod4Mask, xK_Page_Down), spawn "xbacklight -5%")   -- darken
+    , ((mod4Mask, xK_End      ), spawn $ redshift "peek")  -- peek at the natural color
+    , ((mod4Mask, xK_t        ), withFocused toggleBorder) -- toggle border
   ]
 
 -- Redshift utility commands
