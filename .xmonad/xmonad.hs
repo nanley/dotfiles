@@ -30,7 +30,8 @@ myKeys = [
     -- Audio
     , ((mod4Mask, xK_Up   ), spawn $ setVolFeedback "+5%")
     , ((mod4Mask, xK_Down ), spawn $ setVolFeedback "-5%")
-    , ((mod4Mask, xK_Right), spawn $ setMute True)
+    , ((mod4Mask, xK_Right), spawn $ setVolFeedback "+0%")
+    , ((mod4Mask, xK_Left ), spawn $ setMute True)
 
     -- Appearance
     , ((mod4Mask, xK_b    ), spawn "xbacklight +5%")       -- brighten
