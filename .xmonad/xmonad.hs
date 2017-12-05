@@ -36,10 +36,10 @@ myKeys = [
     -- Appearance
     , ((mod4Mask, xK_Page_Up  ), spawn "xbacklight +5%")   -- brighten
     , ((mod4Mask, xK_Page_Down), spawn "xbacklight -5%")   -- darken
-    , ((mod4Mask, xK_End      ), spawn $ redshift "peek")  -- peek at the natural color
+    , ((mod4Mask, xK_End      ), spawn peekNoRedshift)     -- peek at the natural color
     , ((mod4Mask, xK_t        ), withFocused toggleBorder) -- toggle border
   ]
 
 -- Redshift utility commands
-redshift "peek" = redshift "stop" ++ "; sleep 30 ; " ++ redshift "start"
-redshift cmd    = "systemctl --user " ++ cmd ++" redshift"
+peekNoRedshift = toggleRedshift ++ "; sleep 30 ;" ++ toggleRedshift
+ where toggleRedshift = "pkill -USR1 redshift"
