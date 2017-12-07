@@ -2,5 +2,5 @@ History = 256
 ShowDotFiles = 1
 ShowLast = 1
 Terminal = terminator
-URL_u = firefox --new-window "%u"
+URL_u = firefox --new-window "%s"
 URL_s = firefox --new-window --search "%s"
