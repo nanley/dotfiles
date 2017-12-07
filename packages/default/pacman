@@ -1,0 +1,51 @@
+# Minimal Install
+base
+base-devel
+intel-ucode
+
+# xmonad + bundled-apps
+dmenu
+firefox
+gmrun
+i3lock
+libcanberra-pulse
+pulseaudio
+redshift
+terminator
+ttf-dejavu
+xmobar
+xmonad
+xmonad-contrib
+xorg-server
+xorg-xinit
+xorg-xmessage
+xorg-xsetroot
+
+# General utilities
+autojump
+bash-completion
+dosfstools
+htop
+openssh
+pdfgrep
+rsync
+scrot
+stow
+tig
+tmux
+unzip
+xorg-xev
+xorg-xrandr
+
+# Laptop/Wireless tools
+dialog
+wpa_supplicant
+xf86-video-intel
+xorg-xbacklight
+
+# Content Editors/Viewers
+aspell-en
+eog
+evince
+libreoffice-fresh
+vim
