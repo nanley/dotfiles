@@ -15,7 +15,7 @@ Config {
                              , "--High"     , "30"         -- units: %
                              , "--high"     , "red"
                              ] 10
-        , Run Date           "%a %H:%M" "date" 50
+        , Run Date           "WW%V %a %H:%M" "date" 50
         , Run Memory         [ "--template" ,"Mem: <usedratio>%"
                              , "--High"     , "50"        -- units: %
                              , "--high"     , "red"
