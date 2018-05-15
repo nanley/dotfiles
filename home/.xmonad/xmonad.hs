@@ -25,7 +25,7 @@ myConfig = def {
 
 myKeys = [
     -- Security
-      ((mod4Mask, xK_l    ), spawn "i3lock")
+      ((mod4Mask, xK_l    ), spawn "slimlock")
 
     -- Audio
     , ((mod4Mask, xK_Up   ), spawn $ setVolFeedback "+5%")
