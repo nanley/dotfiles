@@ -7,7 +7,7 @@ Config {
    , position    = TopSize C 100 20
    , alpha       = 255
    , borderColor = "black"
-   , template    = " %StdinReader% }{ | %multicpu% | %memory% | %battery% | %wlp1s0wi% | %date% "
+   , template    = " %StdinReader% }{ | Kbd: %kbd% | %multicpu% | %memory% | %battery% | %wlp1s0wi% | %date% "
    , commands    =
         [ Run StdinReader
         , Run Wireless "wlp1s0" [ "--template", "Net: <essid>" ] 10
@@ -16,6 +16,7 @@ Config {
                              , "--high"     , "red"
                              ] 10
         , Run Date           "WW%V %a %H:%M" "date" 50
+        , Run Kbd            [("us(colemak)", "Colemak"), ("us", "QWERTY")]
         , Run Memory         [ "--template" ,"Mem: <usedratio>%"
                              , "--High"     , "50"        -- units: %
                              , "--high"     , "red"
