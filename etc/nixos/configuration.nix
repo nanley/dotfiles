@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
 
     # Console apps
-    tmux autojump htop rsync stow git tig
+    tmux autojump htop rsync stow git tig udisks
 
     # Graphical apps
     evince scrot
