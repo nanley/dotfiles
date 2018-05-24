@@ -32,6 +32,15 @@
     # Custom desktop environment dependencies
     dmenu gmrun haskellPackages.xmobar libcanberra sound-theme-freedesktop
       terminator firefox
+
+    # Use a customized vim
+    (vim_configurable.customize {
+      name = "vim2";
+      vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [ fugitive ];
+     };
+    })
+
   ];
 
   # Program options
