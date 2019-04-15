@@ -7,10 +7,10 @@ Config {
    , position    = TopSize C 100 20
    , alpha       = 255
    , borderColor = "black"
-   , template    = " %StdinReader% }{ | Kbd: %kbd% | %multicpu% | %memory% | %disku% | %battery% | %wlp1s0wi% | %date% "
+   , template    = " %StdinReader% }{ | Kbd: %kbd% | %multicpu% | %memory% | %disku% | %battery% | %wlp3s0wi% | %date% "
    , commands    =
         [ Run StdinReader
-        , Run Wireless "wlp1s0" [ "--template", "Net: <essid>" ] 10
+        , Run Wireless "wlp3s0" [ "--template", "Net: <essid>" ] 10
         , Run MultiCpu       [ "--template" , "Cpu: <total>%"
                              , "--High"     , "30"         -- units: %
                              , "--high"     , "red"
