@@ -57,17 +57,6 @@
   services.openssh.enable = true; # Enable sshd.
   services.physlock.enable = true; # Lock the screen before suspending.
   services.timesyncd.enable = true; # Synchronize the time.
-  services.compton = { # Improve UI rendering.
-    enable = true;
-    backend = "glx";
-    #XXX: Avoid partly transparent Terminator window borders:
-    #Start workaround
-    shadow = true;
-    shadowOffsets = [ (-2) (-2) ];
-    shadowOpacity = "1.0";
-    extraOptions = "shadow-radius = 1;";
-    #End workaround
-  };
   services.redshift = { # Make the screen more eye-friendly
     enable = true;
     provider = "geoclue2";
