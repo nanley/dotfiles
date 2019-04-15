@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
 
     # Console apps
-    tmux autojump htop rsync stow git tig udisks
+    tmux htop rsync stow git tig udisks
 
     # Graphical apps
     evince scrot
@@ -44,6 +44,7 @@
   ];
 
   # Program options
+  programs.autojump.enable = true;
   programs.bash.enableCompletion = true;
   programs.gnupg.agent = {
     enable = true;
