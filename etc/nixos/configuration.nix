@@ -31,7 +31,7 @@
 
     # Custom desktop environment dependencies
     dmenu gmrun haskellPackages.xmobar libcanberra sound-theme-freedesktop
-      terminator firefox
+      terminator firefox i3lock
 
     # Use a customized vim
     (vim_configurable.customize {
@@ -51,11 +51,11 @@
     enableSSHSupport = true;
   };
   programs.vim.defaultEditor = true;
+  programs.xss-lock.enable = true;
 
   # Services
   services.autorandr.enable = true; # Change the monitor config automatically.
   services.openssh.enable = true; # Enable sshd.
-  services.physlock.enable = true; # Lock the screen before suspending.
   services.timesyncd.enable = true; # Synchronize the time.
   services.redshift = { # Make the screen more eye-friendly
     enable = true;
