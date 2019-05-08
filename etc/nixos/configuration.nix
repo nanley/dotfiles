@@ -60,7 +60,7 @@
   services.redshift = { # Make the screen more eye-friendly
     enable = true;
     provider = "geoclue2";
-    brightness.night = "0.5";
+    extraOptions = [ "-m vidmode" ];
   };
   services.xserver = {
     enable = true;
