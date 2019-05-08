@@ -80,6 +80,5 @@
     shell = pkgs.bashInteractive;
   };
 
-  system.stateVersion = "18.03";
-  system.autoUpgrade.enable = true;
+  system.stateVersion = "19.03";
 }
