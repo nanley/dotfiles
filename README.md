@@ -18,7 +18,7 @@
 * Install packages
 
 ```shell
-    $ nix-env -i stow
+    $ nix-shell -p stow
 ```
 
 * Install package configuration files
