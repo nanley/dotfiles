@@ -30,7 +30,7 @@
     evince scrot
 
     # Custom desktop environment dependencies
-    dmenu gmrun haskellPackages.xmobar libcanberra sound-theme-freedesktop
+    dmenu gmrun haskellPackages.xmobar libcanberra-gtk2 sound-theme-freedesktop
       terminator firefox i3lock xrandr-invert-colors
 
     # Use a customized vim
