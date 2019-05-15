@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
 
     # Console apps
-    tmux htop rsync stow git cscope tig udisks
+    tmux htop stow git cscope tig udisks
 
     # Graphical apps
     evince scrot
@@ -45,7 +45,6 @@
 
   # Program options
   programs.autojump.enable = true;
-  programs.bash.enableCompletion = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -68,7 +67,6 @@
     xkbVariant = ",colemak";
     xkbOptions = "grp:shift_toggle";
     libinput.enable = true; # Enable touchpads
-    videoDrivers = [ "modesetting" ]; # Use a maintained x11 ddx
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
@@ -77,7 +75,6 @@
   users.extraUsers.nchery = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.bashInteractive;
   };
 
   system.stateVersion = "19.03";
