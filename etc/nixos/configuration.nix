@@ -35,13 +35,16 @@
 
     # Use a customized vim
     (vim_configurable.customize {
-      name = "vim2";
+      name = "vim";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [ fugitive ];
      };
     })
 
   ];
+  environment.sessionVariables = {
+    EDITOR = "vim";
+  };
 
   # Program options
   programs.autojump.enable = true;
@@ -49,7 +52,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-  programs.vim.defaultEditor = true;
   programs.xss-lock.enable = true;
 
   # Services
