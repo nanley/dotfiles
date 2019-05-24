@@ -21,6 +21,7 @@
   time.timeZone = "America/Los_Angeles";
 
   # System profile packages
+  environment.sessionVariables.EDITOR = "vim";
   environment.systemPackages = with pkgs; [
 
     # Console apps
@@ -36,15 +37,10 @@
     # Use a customized vim
     (vim_configurable.customize {
       name = "vim";
-      vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ fugitive ];
-     };
+      vimrcConfig.packages.myVimPackage.start = with vimPlugins; [ fugitive ];
     })
 
   ];
-  environment.sessionVariables = {
-    EDITOR = "vim";
-  };
 
   # Program options
   programs.autojump.enable = true;
