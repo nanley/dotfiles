@@ -16,7 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true; 
 
   time.timeZone = "America/Los_Angeles";
 
@@ -72,7 +71,7 @@
   # Users
   users.extraUsers.nchery = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" ];
   };
 
   system.stateVersion = "19.03";
