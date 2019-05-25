@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
 
     # Console apps
-    tmux htop stow git cscope ctags tig udisks
+    tmux htop stow git cscope ctags tig
 
     # Graphical apps
     evince scrot
