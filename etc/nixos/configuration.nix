@@ -52,7 +52,6 @@
   # Services
   services.autorandr.enable = true; # Change the monitor config automatically.
   services.openssh.enable = true; # Enable sshd.
-  services.timesyncd.enable = true; # Synchronize the time.
   services.redshift = { # Make the screen more eye-friendly
     enable = true;
     provider = "geoclue2";
