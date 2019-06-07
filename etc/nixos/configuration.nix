@@ -31,7 +31,7 @@
 
     # Custom desktop environment dependencies
     dmenu gmrun haskellPackages.xmobar libcanberra-gtk2 sound-theme-freedesktop
-      terminator firefox i3lock xrandr-invert-colors
+      firefox i3lock xrandr-invert-colors
 
     # Use a customized vim
     (vim_configurable.customize {

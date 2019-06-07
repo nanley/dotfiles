@@ -15,12 +15,8 @@ bwBarPP = def {ppUrgent  = xmobarColor "white" "black" . pad}
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_b)
 
 myConfig = def {
-    -- Change the default terminal for: window resizing, clickable
-    -- URLs, and urgent hints.
-      terminal   = "terminator"
-
     -- Visually differentiate the middle workspace.
-    , workspaces = map show [1..4] ++ ("✞✞✞" : map show [6..9])
+      workspaces = map show [1..4] ++ ("✞✞✞" : map show [6..9])
   } `additionalKeys` myKeys
 
 myKeys = [

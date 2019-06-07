@@ -11,7 +11,6 @@ i3lock
 libcanberra-pulse
 pulseaudio
 redshift
-terminator
 ttf-dejavu
 xmobar
 xmonad
@@ -20,6 +19,7 @@ xorg-server
 xorg-xinit
 xorg-xmessage
 xorg-xsetroot
+xterm
 
 # General utilities
 autojump
