@@ -5,3 +5,26 @@ XTerm.vt100.charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm.vt100.faceName: Mono
 XTerm.vt100.faceSize: 10
 XTerm.termName: xterm-256color
+
+! Colors for XTerm+URxvt and maybe other terminals:
+*background: #ffffff
+*foreground: #000000
+*cursorColor: #000000
+! This colormap is copied from terminators builtin *Ambience* scheme
+! (see /usr/lib/python2.7/site-packages/terminatorlib/prefseditor.py):
+*color0: #2e3436
+*color1: #cc0000
+*color2: #4e9a06
+*color3: #c4a000
+*color4: #3465a4
+*color5: #75507b
+*color6: #06989a
+*color7: #d3d7cf
+*color8: #555753
+*color9: #ef2929
+*color10: #8ae234
+*color11: #fce94f
+*color12: #729fcf
+*color13: #ad7fa8
+*color14: #34e2e2
+*color15: #eeeeec
