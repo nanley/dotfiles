@@ -66,6 +66,7 @@
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
+  services.urxvtd.enable = true;
 
   # Users
   users.extraUsers.nchery = {

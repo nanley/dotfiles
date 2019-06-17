@@ -15,6 +15,9 @@ bwBarPP = def {ppUrgent  = xmobarColor "white" "black" . pad}
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_b)
 
 myConfig = def {
+    -- Use a terminal which supports window-resizing.
+      terminal = "urxvtc",
+
     -- Visually differentiate the middle workspace.
       workspaces = map show [1..4] ++ ("✞✞✞" : map show [6..9])
   } `additionalKeys` myKeys
