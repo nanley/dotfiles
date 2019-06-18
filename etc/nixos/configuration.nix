@@ -31,7 +31,7 @@
 
     # Custom desktop environment dependencies
     dmenu gmrun haskellPackages.xmobar libcanberra-gtk2 sound-theme-freedesktop
-      firefox i3lock xrandr-invert-colors
+      firefox i3lock xrandr-invert-colors alacritty
 
     # Use a customized vim
     (vim_configurable.customize {
@@ -66,7 +66,6 @@
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
-  services.urxvtd.enable = true;
 
   # Users
   users.extraUsers.nchery = {

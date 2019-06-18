@@ -16,7 +16,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask .|. shiftMask, xK_
 
 myConfig = def {
     -- Use a terminal which supports window-resizing.
-      terminal = "urxvtc",
+      terminal = "alacritty",
 
     -- Visually differentiate the middle workspace.
       workspaces = map show [1..4] ++ ("✞✞✞" : map show [6..9])
