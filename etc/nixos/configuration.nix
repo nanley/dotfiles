@@ -43,10 +43,6 @@
 
   # Program options
   programs.autojump.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
   programs.xss-lock.enable = true;
 
   # Services
