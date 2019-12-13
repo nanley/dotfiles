@@ -16,6 +16,7 @@
   boot.loader.systemd-boot.enable = true;
   
   networking.hostName = "nixos";
+  networking.usePredictableInterfaceNames = false;
 
   time.timeZone = "America/Los_Angeles";
   location.provider = "geoclue2";
