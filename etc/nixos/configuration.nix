@@ -11,6 +11,7 @@
 
   hardware.pulseaudio.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
+  hardware.acpilight.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -33,7 +34,7 @@
 
     # Custom desktop environment dependencies
     dmenu gmrun haskellPackages.xmobar libcanberra-gtk2 sound-theme-freedesktop
-      firefox i3lock xrandr-invert-colors alacritty
+      firefox i3lock xrandr-invert-colors acpilight alacritty
 
     # Use a customized vim
     (vim_configurable.customize {
@@ -67,7 +68,7 @@
   # Users
   users.extraUsers.nchery = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
   };
 
   system.stateVersion = "19.09";

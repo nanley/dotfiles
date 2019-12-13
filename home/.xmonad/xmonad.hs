@@ -33,8 +33,8 @@ myKeys = [
     , ((mod4Mask, xK_Left ), spawn $ setMute True)
 
     -- Appearance
-    , ((mod4Mask, xK_Page_Up  ), spawn "xbacklight +5%")   -- brighten
-    , ((mod4Mask, xK_Page_Down), spawn "xbacklight -5%")   -- darken
+    , ((mod4Mask, xK_Page_Up  ), spawn "xbacklight -inc 5")   -- brighten
+    , ((mod4Mask, xK_Page_Down), spawn "xbacklight -dec 5")   -- darken
     , ((mod4Mask, xK_Home     ), spawn "xrandr-invert-colors")  -- invert (when Redshift is paused)
     , ((mod4Mask, xK_End      ), spawn "pkill -USR1 redshift")  -- toggle Redshift
     , ((mod4Mask, xK_t        ), withFocused toggleBorder) -- toggle border
