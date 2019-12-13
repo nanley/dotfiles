@@ -18,6 +18,7 @@
   networking.hostName = "nixos";
 
   time.timeZone = "America/Los_Angeles";
+  location.provider = "geoclue2";
 
   # System profile packages
   environment.sessionVariables.EDITOR = "vim";
@@ -50,7 +51,6 @@
   services.openssh.enable = true; # Enable sshd.
   services.redshift = { # Make the screen more eye-friendly
     enable = true;
-    provider = "geoclue2";
     extraOptions = [ "-m vidmode" ];
   };
   services.xserver = {
@@ -69,5 +69,5 @@
     extraGroups = [ "wheel" ];
   };
 
-  system.stateVersion = "19.03";
+  system.stateVersion = "19.09";
 }
