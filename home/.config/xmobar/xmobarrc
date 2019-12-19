@@ -7,9 +7,10 @@ Config {
    , position    = TopSize C 100 20
    , alpha       = 255
    , borderColor = "black"
-   , template    = " %StdinReader% }{ | Kbd: %kbd% | %multicpu% | %memory% | %disku% | %battery% | %wlan0wi% | %date% "
+   , template    = " %StdinReader% }{ <%upd8%| Kbd: %kbd% | %multicpu% | %memory% | %disku% | %battery% | %wlan0wi% | %date% "
    , commands    =
         [ Run StdinReader
+        , Run Com ".config/xmobar/checkUpdate.sh" [] "upd8" 300
         , Run Wireless "wlan0" [ "--template", "Net: <essid>" ] 10
         , Run MultiCpu       [ "--template" , "Cpu: <total>%"
                              , "--High"     , "30"         -- units: %

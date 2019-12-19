@@ -71,5 +71,6 @@
     extraGroups = [ "wheel" "video" ];
   };
 
+  system.autoUpgrade.enable = true;
   system.stateVersion = "19.09";
 }
