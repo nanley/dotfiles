@@ -61,6 +61,7 @@
     xkbVariant = ",colemak";
     xkbOptions = "grp:shift_toggle";
     libinput.enable = true; # Enable touchpads
+    windowManager.default = "xmonad";
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
