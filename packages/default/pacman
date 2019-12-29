@@ -5,7 +5,7 @@ intel-ucode
 
 # xmonad + bundled-apps
 dmenu
-firefox
+chromium
 gmrun
 i3lock
 libcanberra-pulse
