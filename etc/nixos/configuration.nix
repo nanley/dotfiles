@@ -62,7 +62,7 @@
     xkbVariant = ",colemak";
     xkbOptions = "grp:shift_toggle";
     libinput.enable = true; # Enable touchpads
-    windowManager.default = "xmonad";
+    displayManager.defaultSession = "none+xmonad";
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
@@ -74,5 +74,5 @@
   };
 
   system.autoUpgrade.enable = true;
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.09";
 }
