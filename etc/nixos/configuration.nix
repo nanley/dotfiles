@@ -23,6 +23,7 @@
   location.provider = "geoclue2";
 
   # System profile packages
+  environment.homeBinInPath = true;
   environment.sessionVariables.EDITOR = "vim";
   environment.systemPackages = with pkgs; [
 
