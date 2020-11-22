@@ -40,7 +40,8 @@
     # Use a customized vim
     (vim_configurable.customize {
       name = "vim";
-      vimrcConfig.packages.myVimPackage.start = with vimPlugins; [ fugitive ];
+      vimrcConfig.packages.myVimPackage.start = with vimPlugins;
+        [ editorconfig-vim fugitive ];
     })
 
   ];
